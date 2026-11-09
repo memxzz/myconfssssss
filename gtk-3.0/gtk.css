@@ -1,0 +1,31 @@
+/* Fondo principal */
+.nemo-window,
+.nemo-window .view {
+    background-color: #080808;
+    color: #eeeeee;
+}
+
+/* Panel lateral */
+.nemo-window .sidebar,
+.nemo-window .sidebar .view {
+    background-color: #050505;
+    color: #cccccc;
+}
+
+/* Elementos seleccionados */
+.nemo-window .view:selected {
+    background-color: #292929;
+    color: #ffffff;
+}
+
+/* Barra de herramientas */
+.nemo-window toolbar {
+    background-color: #101010;
+    color: #ffffff;
+}
+
+/* Evitar bordes redondeados */
+.nemo-window,
+.nemo-window * {
+    border-radius: 0;
+}

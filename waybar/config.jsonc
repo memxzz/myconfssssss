@@ -1,0 +1,150 @@
+
+    
+  
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "left",
+  "width": 54,
+  "spacing": 4,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "cpu",
+    "memory",
+    "custom/media"
+  ],
+  "modules-right": [
+    "clock",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "battery",
+    "tray"
+  ],
+  "custom/launcher": {
+    "format": "󰣇",
+    "tooltip": true,
+    "tooltip-format": "Abrir Sherlock",
+    "on-click": "sherlock"
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": []
+    }
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 24,
+    "separate-outputs": true,
+    "rewrite": {},
+    "rotate": 90
+  },
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%",
+    "on-click": "alacritty -e btop",
+    "tooltip": true,
+    "rotate": 90
+  },
+  "memory": {
+    "interval": 2,
+    "format": "󰍛 {percentage}%",
+    "on-click": "alacritty -e btop",
+    "tooltip": true,
+    "rotate": 90
+  },
+  "custom/media": {
+    "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then printf \" %.22s\\n\" \"$title\"; else echo \"\"; fi",
+    "interval": 2,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "tooltip": true,
+    "rotate": 90
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    "format-alt": " {:%d/%m/%Y}",
+    "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "rotate": 90
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 0%",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "pamixer -t",
+    "scroll-step": 5,
+    "tooltip-format": "Volumen: {volume}%",
+    "rotate": 90
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "format-no-controller": "",
+    "tooltip-format": "Dispositivos conectados: {num_connections}",
+    "on-click": "blueman-manager"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid}\n{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Sin conexión",
+    "interval": 3,
+    "on-click": "nm-connection-editor"
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{power:>1.0f}W · {capacity}%",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "rotate": 90
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 6
+  }
+}
+
